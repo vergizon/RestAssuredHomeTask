@@ -5,6 +5,7 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import lombok.experimental.UtilityClass;
+import ru.netology.data.RegistrationUserInfo;
 
 import static io.restassured.RestAssured.given;
 
@@ -16,7 +17,7 @@ public class transmittingToJson {
 
         private RequestSpecification requestSpec;
 
-        public static void registrateUser(RegistrationInfo user) {
+        public static void registrateUser(RegistrationUserInfo user) {
             given().spec(requestSpec)
                     .body(user)
                     .when()
